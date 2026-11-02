@@ -1,14 +1,11 @@
 class MyLinkedList {
-
     class Node {
         int val;
         Node next;
-
         Node(int val) {
             this.val = val;
         }
     }
-
     private Node head;
     private int size;
 
@@ -16,7 +13,6 @@ class MyLinkedList {
         head = null;
         size = 0;
     }
-
     public int get(int index) {
         if (index < 0 || index >= size)
             return -1;
@@ -27,14 +23,12 @@ class MyLinkedList {
         }
         return curr.val;
     }
-
     public void addAtHead(int val) {
         Node node = new Node(val);
         node.next = head;
         head = node;
         size++;
     }
-
     public void addAtTail(int val) {
         Node node = new Node(val);
 
@@ -49,7 +43,6 @@ class MyLinkedList {
         }
         size++;
     }
-
     public void addAtIndex(int index, int val) {
         if (index < 0 || index > size)
             return;
@@ -58,18 +51,15 @@ class MyLinkedList {
             addAtHead(val);
             return;
         }
-
         Node prev = head;
         for (int i = 0; i < index - 1; i++) {
             prev = prev.next;
         }
-
         Node node = new Node(val);
         node.next = prev.next;
         prev.next = node;
         size++;
     }
-
     public void deleteAtIndex(int index) {
         if (index < 0 || index >= size)
             return;
@@ -79,12 +69,10 @@ class MyLinkedList {
             size--;
             return;
         }
-
         Node prev = head;
         for (int i = 0; i < index - 1; i++) {
             prev = prev.next;
         }
-
         prev.next = prev.next.next;
         size--;
     }
