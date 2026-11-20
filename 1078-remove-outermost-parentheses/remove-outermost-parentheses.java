@@ -4,7 +4,7 @@ class Solution {
         StringBuilder result = new StringBuilder();
         Stack<Character> stack = new Stack<>();
         for (char c : s.toCharArray()) {
-            if (c == '(') {
+            if (c== '(') {
                 if (!stack.isEmpty()) {
                     result.append(c);
                 }
